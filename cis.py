@@ -1,3 +1,8 @@
+/**
+ * このソースコードは, 『Pythonで学ぶ実践画像・音声処理入門』のサイトからお借りしている.
+ * http://www.slp.k.hosei.ac.jp/~itou/book/2018/PythonMedia/index.html
+ */
+
 import numpy as np
 import simpleaudio as sa
 

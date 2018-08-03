@@ -7,6 +7,8 @@
 
 『Pythonで学ぶ実践画像・音声処理入門』 コロナ社
 
+http://www.slp.k.hosei.ac.jp/~itou/book/2018/PythonMedia/index.html
+
 この図書をもとに信号処理について学ぶ
 
 
@@ -30,3 +32,9 @@ see: http://www.slp.k.hosei.ac.jp/~itou/book/2018/PythonMedia/install.html
   pip install numpy --upgrade
 
 で対応した.
+
+
+テキストのサンプルプログラムで利用するファイル
+------------------------------------------------
+テキストのサイトで配布されているファイルは`book_files/`に配置して利用する.
+このディレクトリは`.gitignore`に登録しているので, ファイルは上記サイトから自分で用意する.
