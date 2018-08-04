@@ -1,16 +1,35 @@
 # 
 # このソースコードは, 『Pythonで学ぶ実践画像・音声処理入門』のサイトからお借りしている.
 # http://www.slp.k.hosei.ac.jp/~itou/book/2018/PythonMedia/index.html
+#
+# ## log ##
+# audioplayをjupyter用に変更, もとの関数は`audiopaly_org`にメソッド名変更
 # 
 
 import numpy as np
 import simpleaudio as sa
+import IPython.display
 
-
-def audioplay(y, fs):
+def audioplay_org(y, fs):
+    """
+    オリジナルの audioplay
+    :param y:
+    :param fs:
+    :return:
+    """
     yout = np.iinfo(np.int16).max / np.max(np.abs(y)) * y
     yout = yout.astype(np.int16)
     play_obj = sa.play_buffer(yout, y.ndim, 2, fs)
+
+
+def audioplay(y, fs):
+    """
+    jupyter用にaudioplayを変更
+    :param y:
+    :param fs:
+    :return:
+    """
+    IPython.display.display(IPython.display.Audio(y, rate=fs))
 
 
 import scipy.io.wavfile as sw

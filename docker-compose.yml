@@ -1,0 +1,14 @@
+version: '2'
+services:
+  jupyter:
+    build:
+      dockerfile: $PWD/docker/Dockerfile
+      context: ./
+    container_name: python-dsp
+    ports:
+      - 8888:8888
+    volumes:
+      - $PWD/work:/root/work
+      - $PWD/book_files:/root/book_files
+      - $PWD/mylib:/root/lib
+      - $PWD/.jupyter/nbconfig:/root/.jupyter/nbconfig
