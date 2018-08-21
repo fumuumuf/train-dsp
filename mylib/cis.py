@@ -68,14 +68,28 @@ def wavwrite(wavefile, data, fs):
 import cv2
 
 
+
 # def implay(frame,fps): # color video only
-def implay(frame):  # color video only
+def implay_org(frame):  # color video only
+    """
+    オリジナルの implay 関数
+    """
     #    f_rate = np.int(1000/fps)
     for k in np.arange(1, frame.shape[3]):
         cv2.imshow('frame', frame[:, :, :, k])
         cv2.waitKey(1)
     #        cv2.waitKey(f_rate)
-
+def implay(frame, interval_sec=0.01):
+    """
+    jupyter用に変更した implay 関数
+    あまり長いframeを描画しようとすると処理が重くなる
+    """
+    import time
+    for k in np.arange(1, frame.shape[3]):
+        plt.imshow(frame[:, :, :, k])
+        IPython.display.display(plt.gcf())
+        IPython.display.clear_output(wait=True)
+        time.sleep(interval_sec)
 
 import mpl_toolkits.mplot3d as mm
 import matplotlib.pyplot as plt
