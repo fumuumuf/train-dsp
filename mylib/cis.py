@@ -79,12 +79,16 @@ def implay_org(frame):  # color video only
         cv2.imshow('frame', frame[:, :, :, k])
         cv2.waitKey(1)
     #        cv2.waitKey(f_rate)
-def implay(frame):
+def implay(frame, interval_sec=0.01):
+    """
+    jupyter用に変更した implay 関数
+    """
+    import time
     for k in np.arange(1, frame.shape[3]):
         plt.imshow(frame[:, :, :, k])
-        display.clear_output(wait=True)
-        display.display(plt.gcf())
-        time.sleep(0.200)
+        IPython.display.display(plt.gcf())
+        time.sleep(0.050)
+        IPython.display.clear_output(wait=True)
 
 import mpl_toolkits.mplot3d as mm
 import matplotlib.pyplot as plt
