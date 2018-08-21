@@ -87,8 +87,8 @@ def implay(frame, interval_sec=0.01):
     for k in np.arange(1, frame.shape[3]):
         plt.imshow(frame[:, :, :, k])
         IPython.display.display(plt.gcf())
-        time.sleep(0.050)
         IPython.display.clear_output(wait=True)
+        time.sleep(interval_sec)
 
 import mpl_toolkits.mplot3d as mm
 import matplotlib.pyplot as plt
