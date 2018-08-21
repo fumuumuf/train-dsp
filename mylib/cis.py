@@ -82,6 +82,7 @@ def implay_org(frame):  # color video only
 def implay(frame, interval_sec=0.01):
     """
     jupyter用に変更した implay 関数
+    あまり長いframeを描画しようとすると処理が重くなる
     """
     import time
     for k in np.arange(1, frame.shape[3]):
