@@ -114,9 +114,21 @@ def stem3(z):
 
 import plotly.offline as po
 import plotly.graph_objs as go
+import plotly
+plotly.offline.init_notebook_mode(connected=False)
 
-
-def mesh(z):
+def org_mesh(z):
+    """
+    オリジナルのmesh関数
+    """
     data = [go.Surface(z=z)]
     fig = go.Figure(data=data)
     po.plot(fig)
+
+def mesh(z):
+    """
+    jupyterで使えるようにしたmesh関数
+    """
+    data = [go.Surface(z=z)]
+    fig = go.Figure(data=data)
+    po.iplot(fig)
